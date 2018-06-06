@@ -1,6 +1,6 @@
 # Azure Labs
 
-Azure Labs is a collection of hands-on coding labs designed to help Computer Science faculty and students learn how to deploy solutions to the Azure cloud involving common scenarios such as Web development, AI and machine learning, data science, and IoT using cross-platform technologies. Most labs are compatible with Windows, macOS, or Linux and take 60 to 90 minutes to complete.
+Azure Labs is a collection of hands-on coding labs designed to help developers learn how to deploy solutions to the Azure cloud involving common scenarios such as Web development, AI and machine learning, data science, and IoT using cross-platform technologies. Most labs are compatible with Windows, macOS, or Linux and take 60 to 90 minutes to complete.
 
 Before you start, make sure you have access to a Microsoft Azure subscription. Students can get a free Azure subscription and credits here:
 
