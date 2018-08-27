@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*"
+           Name="Microsoft Speech Translator"
+           Language="1033"
+           Version="0.9.0.0"
+           Manufacturer="Microsoft Corporation"
+           UpgradeCode="fb2306ef-9362-4038-9339-4a11f3c9385a">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of Microsoft Speech Translator is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Microsoft Speech Translator" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf"/>
+    <Property Id="ARPPRODUCTICON" Value="SpeechTranslator_48.ico" />
+    <Feature Id="Addins" Title="Addins" Level="1">
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+  
+    <UI>
+      <UIRef Id="WixUI_Minimal" />
+      <Publish Dialog="ExitDialog"
+          Control="Finish" 
+          Event="DoAction" 
+          Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Run Microsoft Speech Translator" />
+    <Property Id="WixShellExecTarget" Value="[INSTALLFOLDER]SpeechTranslator.exe" />
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+
+  </Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Microsoft Speech Translator" />
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Microsoft Translator" />
+      </Directory>
+    </Directory>
+	</Fragment>
+
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="{0DDF3BDD-C6B7-4922-B835-B16902AAC345}">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="Speech Translator"
+                  Description="Microsoft Translator Speech Translator"
+                  Target="[INSTALLFOLDER]SpeechTranslator.exe"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                  />
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\Translator\SpeechTranslator" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+
+  <Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent" Guid="B27FA443-12E7-4F54-B973-FEB93386D929">
+        <File Source="$(var.SpeechTranslator.TargetPath)" />
+        <File Source="$(var.SpeechTranslator.TargetPath).config" />
+        <File Source="$(var.SpeechTranslator.TargetDir)\NAudio.dll" />
+        <File Source="$(var.SpeechTranslator.TargetDir)\NAudio.WindowsMediaFormat.dll" />
+        <File Source="$(var.SpeechTranslator.TargetDir)\NAudio.xml" />
+        <File Source="$(var.SpeechTranslator.TargetDir)\Newtonsoft.Json.dll" />
+        <File Source="$(var.SpeechTranslator.TargetDir)\Newtonsoft.Json.xml" />
+      </Component>
+    </ComponentGroup>
+	</Fragment>
+</Wix>

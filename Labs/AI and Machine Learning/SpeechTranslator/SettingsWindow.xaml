@@ -1,0 +1,30 @@
+﻿<Window x:Class="SpeechTranslator.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpeechTranslator"
+        mc:Ignorable="d"
+        Title="SettingsWindow" Height="190" Width="517">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" x:Name="L1" Content="Subscription Key"/>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="ClientID" Margin="0,4,4,0"/>
+        <Button x:Name="SaveButton" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="60" Margin="4,4,4,4" Content="Save" Click="SaveButton_Click" IsDefault="True" ToolTip="Save the account settings"/>
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Margin="0,0,0,0">
+            <Label x:Name="ObtainSubscription" Content="Subscribe to Microsoft Translator" Mouse.MouseEnter="ObtainSubscription_MouseEnter" Mouse.MouseLeave="ObtainSubscription_MouseLeave" Mouse.MouseDown="Label_MouseDown_Subscription" Foreground="Blue"/>
+            <Label Content="and then"/>
+            <Label x:Name="ObtainClientID" Content="obtain a subscription key." Mouse.MouseEnter="ObtainClientID_MouseEnter" Mouse.MouseLeave="ObtainClientID_MouseLeave" Mouse.MouseDown="Label_MouseDown_ClientID" Foreground="Blue"/>
+        </StackPanel>
+        <TextBlock TextWrapping="Wrap" Grid.ColumnSpan="2" Grid.Row="3" Grid.Column="0" Text="Copy the key you obtained for your subscription into the fields above." Margin="-208,147,218,-147"/>
+    </Grid>
+</Window>

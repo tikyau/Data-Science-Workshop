@@ -1,0 +1,12 @@
+﻿<Window x:Class="SpeechTranslator.MiniWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpeechTranslator"
+        mc:Ignorable="d"
+        Title="Translated by Microsoft Translator" Height="96" Width="500" Opacity="0.8" BorderThickness="2" ShowInTaskbar="False" Topmost="True" ToolTip="Display Window" Margin="0">
+    <Grid>
+        <TextBox x:Name="DisplayText" TextWrapping="Wrap" Margin="4,0" BorderThickness="0"/>
+    </Grid>
+</Window>
