@@ -1,0 +1,7 @@
+Show and Explain Query 1 to 3
+
+Excute only the Query 3
+
+View results using both Azure Explorer and ServiceBusExplorer
+		
+		

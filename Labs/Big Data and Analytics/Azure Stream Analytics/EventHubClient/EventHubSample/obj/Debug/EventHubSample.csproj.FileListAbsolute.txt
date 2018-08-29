@@ -1,0 +1,71 @@
+C:\Work\Lab\Azure\EventHub\EventHubSample\EventHubSample\bin\Debug\EventHubSample.exe.config
+C:\Work\Lab\Azure\EventHub\EventHubSample\EventHubSample\bin\Debug\EventHubSample.exe
+C:\Work\Lab\Azure\EventHub\EventHubSample\EventHubSample\bin\Debug\EventHubSample.pdb
+C:\Work\Lab\Azure\EventHub\EventHubSample\EventHubSample\bin\Debug\Microsoft.ServiceBus.dll
+C:\Work\Lab\Azure\EventHub\EventHubSample\EventHubSample\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Work\Lab\Azure\EventHub\EventHubSample\EventHubSample\bin\Debug\Microsoft.ServiceBus.xml
+C:\Work\Lab\Azure\EventHub\EventHubSample\EventHubSample\obj\Debug\EventHubSample.csprojResolveAssemblyReference.cache
+C:\Work\Lab\Azure\EventHub\EventHubSample\EventHubSample\obj\Debug\EventHubSample.exe
+C:\Work\Lab\Azure\EventHub\EventHubSample\EventHubSample\obj\Debug\EventHubSample.pdb
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\EventHubSample\bin\Debug\EventHubSample.exe.config
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\EventHubSample\obj\Debug\EventHubSample.exe
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\EventHubSample\obj\Debug\EventHubSample.pdb
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\EventHubSample\bin\Debug\EventHubSample.exe
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\EventHubSample\bin\Debug\EventHubSample.pdb
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\EventHubSample\bin\Debug\Microsoft.ServiceBus.dll
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\EventHubSample\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\EventHubSample\bin\Debug\Microsoft.ServiceBus.xml
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\EventHubSample\obj\Debug\EventHubSample.csprojResolveAssemblyReference.cache
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\bin\Debug\EventHubSample.exe.config
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\obj\Debug\EventHubSample.exe
+C:\Work\Conferenze\SQL Saturday\460\Real Time Power BI\EventHub\EventHubSample\obj\Debug\EventHubSample.pdb
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\bin\Debug\EventHubSample.exe.config
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\obj\Debug\EventHubSample.exe
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\obj\Debug\EventHubSample.pdb
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\bin\Debug\EventHubSample.exe
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\bin\Debug\EventHubSample.pdb
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\bin\Debug\Microsoft.ServiceBus.dll
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\bin\Debug\Microsoft.ServiceBus.xml
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\obj\Debug\EventHubSample.csprojResolveAssemblyReference.cache
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\bin\Debug\Newtonsoft.Json.dll
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\bin\Debug\Newtonsoft.Json.xml
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\EventHubSample\bin\Debug\sensor-data.raw
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\EventHubSample.exe.config
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\obj\Debug\EventHubSample.exe
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\obj\Debug\EventHubSample.pdb
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\EventHubSample.exe
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\EventHubSample.pdb
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\Microsoft.ServiceBus.dll
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\Newtonsoft.Json.dll
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\Microsoft.ServiceBus.xml
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\Newtonsoft.Json.xml
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\obj\Debug\EventHubSample.csprojResolveAssemblyReference.cache
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\data\accelerometer-data.csv
+C:\Work\Conferenze\Technical Cloud Day\2016\EventHub\Demo\EventHubSample\bin\Debug\data\sensor-data.csv
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\EventHubSample.exe.config
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\obj\Debug\EventHubSample.exe
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\obj\Debug\EventHubSample.pdb
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\data\accelerometer-data.csv
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\data\sensor-data.csv
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\EventHubSample.exe
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\EventHubSample.pdb
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Microsoft.ServiceBus.dll
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Newtonsoft.Json.dll
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Microsoft.ServiceBus.xml
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Newtonsoft.Json.xml
+C:\Work\Conferenze\Technical Cloud Day\2016\Azure Stream Analytics\EventHubClient\EventHubSample\obj\Debug\EventHubSample.csprojResolveAssemblyReference.cache
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\EventHubSample.exe.config
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\obj\Debug\EventHubSample.exe
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\obj\Debug\EventHubSample.pdb
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\data\sensor-data.csv
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\EventHubSample.exe
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\EventHubSample.pdb
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Microsoft.ServiceBus.dll
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Newtonsoft.Json.dll
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Microsoft.ServiceBus.xml
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Microsoft.WindowsAzure.Configuration.xml
+C:\Work\Conferenze\DevWeek\2016\Azure Stream Analytics\EventHubClient\EventHubSample\bin\Debug\Newtonsoft.Json.xml

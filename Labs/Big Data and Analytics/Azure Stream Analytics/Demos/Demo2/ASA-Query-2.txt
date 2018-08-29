@@ -1,0 +1,16 @@
+SELECT
+    SPS.Category, 
+    C.Type,
+    SUM(SPS.Quantity) AS SoldQuantity, 
+    DATEADD(second, -30, System.Timestamp) AS WindowStart,
+    System.Timestamp AS WindowEnd
+INTO
+    OutputStreamEH
+FROM
+    SoldProductsStream SPS 
+INNER JOIN
+    Customers C On SPS.CustomerId = C.CustomerId
+GROUP BY
+    SPS.Category,
+    C.Type,
+    TumblingWindow(second,30) 

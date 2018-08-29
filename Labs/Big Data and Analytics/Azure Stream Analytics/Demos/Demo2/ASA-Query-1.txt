@@ -1,0 +1,10 @@
+SELECT
+    SPS.Category, 
+    SUM(SPS.Quantity) AS SoldQuantity, 
+    DATEADD(second, -30, System.Timestamp) AS WindowStart,
+    System.Timestamp AS WindowEnd
+FROM
+    SoldProductsStream SPS 
+GROUP BY
+    SPS.Category,
+    TumblingWindow(second,30)

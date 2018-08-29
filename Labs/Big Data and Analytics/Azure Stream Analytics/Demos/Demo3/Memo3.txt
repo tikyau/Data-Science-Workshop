@@ -1,0 +1,3 @@
+Use AzureSQL to Hold results
+
+Explain temporal functions

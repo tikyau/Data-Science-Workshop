@@ -1,0 +1,24 @@
+WITH cte as (
+SELECT
+    SensorId,
+    System.TimeStamp as OutTime,
+    Min(OilTemperature) AS MinOilTemperature,
+    Avg(OilTemperature) AS AvgOilTemperature,
+    Max(OilTemperature) AS MaxOilTemperature,
+    CheckSensor(AVG(OilTemperature), AVG(PumpPressure), AVG(MeasuredWearX), AVG(MeasuredWearY)) as Result
+FROM
+    SensorInputStream TIMESTAMP BY MeasurementDate
+GROUP BY
+    SensorId, HoppingWindow(second, 30, 10)
+)
+SELECT
+    SensorId,
+    OutTime,
+    MinOilTemperature,
+    AvgOilTemperature,
+    MaxOilTemperature,
+    Result.[Scored Labels] As ScoredLabel
+INTO
+    SensorOutputStream
+FROM
+    cte

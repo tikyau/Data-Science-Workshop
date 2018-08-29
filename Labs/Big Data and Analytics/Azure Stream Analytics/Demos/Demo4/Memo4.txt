@@ -1,0 +1,5 @@
+
+Add function "CheckSensors" (Provide Machine Learning settings manually)
+URL:	
+	Get From "Request/Response" Help Page
+	Request: "Post"

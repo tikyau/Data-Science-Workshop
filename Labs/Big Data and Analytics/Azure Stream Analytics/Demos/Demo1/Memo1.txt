@@ -1,0 +1,54 @@
+Create "eh-devweek" Event Hub in the "eh-devweek-ns" Namespace
+	NameSpace:
+		Shared Access Policy: "Full", Permission: "Manage,Send,Listen"
+	EventHub:
+		Message Rention: 1day
+		Partition Count: 4
+		Shared Access Policy: "Sender", Permission: "Send"
+
+Add another event hub	
+	EventHub: "eh-devweek-result"
+		Message Rention: 1day
+		Partition Count: 4
+		Shared Access Policy: "eh-devweek-result-manage", Permission: "Send"
+	
+		
+Configure and start the "EventHubSample" application
+	Use the "Sold Products" generator
+	
+Quick overview of Application Code
+	GitHub Packages
+	
+Show received events using the ServiceBusExplorer
+	Connect to namespace
+	Create a Consumer Group Listener on $Default
+	Start it using current time
+	View sent events
+	
+Create a "sa-devweek" Stream Analytics job
+	Input: 
+		"SoldProductsStream"
+			Type: "Data Stream", Source: "Event Hub", "eh-devweek"
+			Serialization: JSON
+	Input
+		"Customers"
+			Type: "Reference"
+			Source: "reference/customer-data.csv"
+
+Sample "SoldProductsStream" stream
+
+Add two outputs
+	"OutputStreamBlob":
+		Sink: "Blob Storage"
+		Path Prefix Pattern: "sa/result/{date}"
+		Date Format: "YYYY/MM/DD"
+		Serialization: JSON, Line Separated
+	
+	"OutputStreamEH":
+		Sink: "Event Hub"
+		Event Hub Name, "eh-devweek-result"
+		Event Hub Policy "eh-devweek-result-manage"
+		Serialization: JSON, Line Separated
+
+		
+		
