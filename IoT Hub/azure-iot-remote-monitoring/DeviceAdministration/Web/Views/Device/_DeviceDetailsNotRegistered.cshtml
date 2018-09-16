@@ -1,0 +1,46 @@
+﻿@model Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.Models.DeviceDetailModel
+@using System.Globalization
+@using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Helpers
+@using Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infrastructure.Models
+@using Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.Helpers
+@using GlobalResources
+
+<div class="header_grid header_grid_general">
+    <h3 class="grid_subheadhead_detail">@Strings.DeviceProperties</h3>
+    <img src="~/Content/img/icon_info_gray.svg" class="details_grid_info" title="@Strings.DevicePropertiesFormattedAsStored" />
+</div>
+
+<section class="details_grid_general">
+    <div class="grid_detail_not_registered">
+        @Strings.RegisteredButNotPresent
+    </div>
+    @foreach (var propVal in Model.DevicePropertyValueModels)
+    {
+        if (!propVal.IsIncludedWithUnregisteredDevices)
+        {
+            continue;
+        }
+
+        <h4 class="grid_subhead_detail_label">@DeviceDisplayHelper.GetDevicePropertyFieldLocalName(propVal.Name)</h4>
+        DateTime? resolvedDate;
+        if (DeviceDisplayHelper.GetIsCopyControlPropertyName(propVal.Name))
+        {
+            string classname = "text_copy_container__input--details_grid";
+            string class_styles_modifier = "text_copy_container--details_grid";
+            string button_style_modifier = "details_grid_general__copy_button";
+            @IoTHelpers.TextCopy(propVal.Name, classname, propVal.Value, class_styles_modifier, button_style_modifier);
+        }
+        else
+        {
+            if ((propVal.PropertyType == PropertyType.DateTime) &&
+                (resolvedDate = DynamicValuesHelper.ConvertToDateTime(CultureInfo.InvariantCulture, propVal.Value)).HasValue)
+            {
+                <p class="grid_detail_value">@resolvedDate.Value.ToString()</p>
+            }
+            else
+            {
+                <p class="grid_detail_value">@propVal.Value</p>
+            }
+        }
+    }
+</section>

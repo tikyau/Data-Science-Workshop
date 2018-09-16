@@ -1,0 +1,46 @@
+﻿@using GlobalResources
+@using Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.Helpers
+@model List<Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infrastructure.Models.DeviceType>
+
+<div id="test">
+    <ul class="select_device__list">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            using (Ajax.BeginForm("SelectType", "Device",
+                new AjaxOptions()
+                {
+                    UpdateTargetId = "content",
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    LoadingElementId = "loadingElement",
+                    OnFailure = "IoTApp.DeviceSelectType.onFailure"
+                }))
+            {
+                <li class="list__item">
+                    <h2 class="item__name">@Model[i].Name</h2>
+                    <p class="item__description">
+                        @Model[i].Description
+                    </p>
+                    <button class="button_base item__add_new_button" type="submit">
+                        @Strings.AddNew
+                    </button>
+                    <input type="hidden" name="Name" value="@Model[i].Name" />
+                    <input type="hidden" name="DeviceTypeId" value="@Model[i].DeviceTypeId" />
+                    <input type="hidden" name="Desciption" value="@Model[i].Description" />
+                    <input type="hidden" name="InstructionsUrl" value="@Model[i].InstructionsUrl" />
+                    <input type="hidden" name="IsSimulatedDevice" value="@Model[i].IsSimulatedDevice.ToString()" />
+
+                </li>
+            }
+        }
+
+    </ul>
+</div>
+<script type="text/javascript">
+    var resources = {
+        addDevice: '@Html.JavaScriptString(Strings.AddDevice)',
+        stepOneHeader: '@Html.JavaScriptString(Strings.StepOneHeader)',
+        selectDeviceTypeError: '@Html.JavaScriptString(Strings.DeviceAddSelectTypeError)'
+    }
+</script>
+<script type="text/javascript" src="~/Scripts/Views/Device/DeviceSelectType.js"></script>

@@ -1,0 +1,68 @@
+﻿@using GlobalResources
+@using Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.Helpers
+@model Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.Models.RegisteredDeviceModel
+
+
+@if (Model.DeviceType.IsSimulatedDevice)
+{
+    <h2 class="device_credentials_header">@Strings.SimulatorCredentialHeader</h2>
+}
+else
+{
+    <h2 class="device_credentials_header">@Strings.CopyCredentials</h2>
+}
+
+@{
+    string classname = "text_copy_container__input--add_device_copy_table";
+
+<table class="table_credentials">
+    <tbody>
+        <tr>
+            <td class="table_credentials__label">
+                @Strings.DeviceIdColon
+            </td>
+            <td class="table_credentials__value">
+                @IoTHelpers.TextCopy("DeviceId", classname, @Model.DeviceId)
+            </td>
+        </tr>
+        <tr>
+            <td class="table_credentials__label">
+                @Strings.AzureDevicesHostnameColon
+            </td>
+            <td class="table_credentials__value">
+                @IoTHelpers.TextCopy("AzureDevicesHostname", classname, @Model.HostName)
+            </td>
+        </tr>
+        <tr>
+            <td class="table_credentials__label">
+                @Strings.DeviceKeyColon
+            </td>
+            <td class="table_credentials__value">
+                @IoTHelpers.TextCopy("PrimaryKey", classname, @Model.PrimaryKey)
+            </td>
+        </tr>
+    </tbody>
+</table>
+}
+
+
+<button type="button" class="button_base button_credentials" onclick="location.href = '@Url.Action("Index", "Device")' ">@Strings.Done</button>
+
+@if (!string.IsNullOrWhiteSpace(Model.InstructionsUrl)) {
+<div class="content_instructions">
+
+    <h3>
+        <a href="@Model.InstructionsUrl" target="_blank">@String.Format(Strings.InstructionsForYourDeviceFormatted, Model.DeviceType.Name)</a>
+        @Strings.OpensInNewTab
+    </h3>
+  
+</div>
+}
+
+<script type="text/javascript">
+    var resources = {
+        addDevice: '@String.Format(Strings.AddADeviceFormatted, Model.DeviceType.Name)',
+        stepThree: '@Html.JavaScriptString(Strings.StepThreeHeader)'
+    }
+</script>
+<script type="text/javascript" src="~/Scripts/Views/Device/AddDeviceCopy.js"></script>

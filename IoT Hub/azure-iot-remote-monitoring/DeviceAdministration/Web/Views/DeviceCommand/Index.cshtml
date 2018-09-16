@@ -1,0 +1,129 @@
+﻿@using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Helpers
+@using Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.Helpers
+@using GlobalResources
+@using Newtonsoft.Json
+@model Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.Models.DeviceCommandModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNoNavigation.cshtml";
+
+    DateTime? resolvedTime;
+
+    bool canSendCommands =
+        Model.SupportDeviceCommand &&
+        (Model.SendCommandModel != null) &&
+        Model.SendCommandModel.CanSendDeviceCommands;
+}
+
+<header class="header_main">
+
+    <button class="header_main__button_back" type="button"></button>
+    <h2 class="header_main__subhead header_main__subhead--large">@string.Format(Strings.DeviceCommandsHeader, Model.DeviceId)</h2>
+
+</header>
+
+<div class="content_outer content_outer--inherit_overflow">
+
+    <div class="content_inner">
+        @if (Model.SupportDeviceCommand)
+        {
+            Html.RenderPartial("_SendCommand", Model.SendCommandModel);
+        }
+
+        <div class="command_container" id="content">
+
+            <h3>@Strings.CommandHistory</h3>
+
+            <table id="commandHistory">
+                <thead>
+                    <tr>
+                        <th>@Strings.CommandName</th>
+                        <th>@Strings.CommandResult</th>
+                        <th>@Strings.CommandValuesSent</th>
+                        <th>@Strings.CommandTimeCreated</th>
+                        <th>@Strings.CommandTimeUpdated</th>
+                        @if (canSendCommands)
+                        {
+                            <th></th>
+                        }
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var supportedCommandNames = DeviceDisplayHelper.BuildAvailableCommandNameSet(Model);
+                    }
+                    @foreach (var commandHistoryItem in Model.CommandHistory)
+                    {
+                        <tr>
+                            <td>
+                                @commandHistoryItem.Name
+                            </td>
+                            <td>
+                                @{string result = commandHistoryItem.Result;}
+                                @{string errorMessage = commandHistoryItem.ErrorMessage;}
+                                @(Html.Partial("_CommandResult", result ?? Strings.Pending, new ViewDataDictionary {{"ErrorMessage", errorMessage}}))
+                            </td>
+                            <td>
+                                @DynamicValuesHelper.ConvertToJsonString(commandHistoryItem.Parameters)
+                            </td>
+                            <td>
+                                @{ resolvedTime = DynamicValuesHelper.ConvertToDateTime(commandHistoryItem.CreatedTime); }
+                                @Html.DisplayFor(m => resolvedTime)
+                            </td>
+                            <td>
+                                @{ resolvedTime = DynamicValuesHelper.ConvertToDateTime(commandHistoryItem.UpdatedTime); }
+                                @if (resolvedTime.HasValue)
+                                {
+                                    @Html.DisplayFor(m => resolvedTime)
+                                }
+                                else
+                                {
+                                    @Strings.Pending
+                                }
+
+                            </td>
+                            @if (canSendCommands)
+                            {
+                                <td>
+                                    @{
+                                    string commandName = commandHistoryItem.Name;
+                                    if (!string.IsNullOrWhiteSpace(commandName) && supportedCommandNames.Contains(commandName))
+                                    {
+                                        <button class="button_base resend_command"
+                                                data-command-name="@commandName"
+                                                data-command-json="@commandHistoryItem.GetParameterString()">
+                                            @Strings.Resend
+                                        </button>
+                                    }
+                                    }
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        "use strict";
+
+        var resources = {
+            redirectToIndexUrl: '@Url.Action("Index", "Device")',
+            commands: '@Html.Raw(Model.CommandsJson)',
+            deviceId: '@Model.DeviceId',
+            deviceIsEnabled: '@Model.DeviceIsEnabled.ToString().ToLower()',
+            commandError: '@Html.JavaScriptString(Strings.CommandError)',
+            commandSendError: '@Html.JavaScriptString(Strings.CommandSendError)',
+            resendCommandError: '@Html.JavaScriptString(Strings.ResendCommandError)'
+        }
+    </script>
+
+    <script type="text/javascript" src="~/Scripts/jquery-dataTables-plugins.js"></script>
+    <script type="text/javascript" src="~/Scripts/Views/DeviceCommand/DeviceCommandIndex.js"></script>
+}
